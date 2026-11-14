@@ -19,7 +19,7 @@ export function Rng() {
           </h2>
           <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
             O RNG (gerador de números aleatórios) decide a ordem de cada carta. Integramos ao servidor de partidas um
-            RNG certificado, para que jogadores e parceiros confiem em cada rodada.
+            RNG certificado, para que jogadores e parceiros confiem no resultado de cada partida.
           </p>
           <ul className="mt-8 space-y-3">
             {points.map((p) => (
