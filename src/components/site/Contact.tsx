@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, Mail, MessageCircle, MapPin } from "lucide-react";
+import { ArrowUpRight, AtSign, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const stages = ["Só uma ideia", "Tenho um protótipo", "Já está no ar"];
 const platforms = ["iOS", "Android", "Web"];
-const needs = ["Jogo completo", "Multiplayer", "RNG certificado", "Servidores", "Segurança"];
+const needs = ["Jogo completo", "Multiplayer", "Embaralhamento", "Servidores", "Segurança"];
 
 function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: string }) {
   return (
@@ -108,13 +108,10 @@ export function Contact() {
 
       <div className="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
         <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 hover:text-foreground">
-          <Mail className="size-4 text-primary" /> {contactInfo.email}
+          <AtSign className="size-4 text-gold" /> {contactInfo.email}
         </a>
         <span className="flex items-center gap-2">
-          <MessageCircle className="size-4 text-primary" /> {contactInfo.phone}
-        </span>
-        <span className="flex items-center gap-2">
-          <MapPin className="size-4 text-primary" /> {contactInfo.location}
+          <Compass className="size-4 text-gold" /> {contactInfo.location}
         </span>
       </div>
     </section>

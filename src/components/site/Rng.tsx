@@ -3,7 +3,7 @@ import { BadgeCheck, Check } from "lucide-react";
 const points = [
   "Gerador criptograficamente seguro, impossível de prever",
   "Embaralhamento Fisher–Yates sem viés entre as cartas",
-  "Aprovado em baterias de testes estatísticos independentes",
+  "Resultados conferidos com testes estatísticos de aleatoriedade",
   "Cada partida registrada e reproduzível para auditoria",
 ];
 
@@ -13,13 +13,13 @@ export function Rng() {
     <section id="rng" className="px-5 pb-28">
       <div className="bento mx-auto grid max-w-6xl gap-12 p-8 md:p-14 lg:grid-cols-2 lg:items-center">
         <div>
-          <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase">RNG certificado</p>
+          <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase">Aleatoriedade</p>
           <h2 className="mt-4 text-4xl leading-tight font-light md:text-5xl">
             Sorte de verdade, <span className="font-serif-display italic text-gradient">comprovada.</span>
           </h2>
           <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-            O RNG (gerador de números aleatórios) decide a ordem de cada carta. O nosso é certificado por laboratório
-            independente, para que jogadores e parceiros confiem em cada rodada.
+            O RNG (gerador de números aleatórios) decide a ordem de cada carta. Integramos ao servidor de partidas um
+            RNG certificado, para que jogadores e parceiros confiem em cada rodada.
           </p>
           <ul className="mt-8 space-y-3">
             {points.map((p) => (
@@ -53,8 +53,8 @@ export function Rng() {
           <div className="mt-8 flex items-center gap-4 rounded-2xl border border-gold/25 bg-gold/5 p-4">
             <BadgeCheck className="size-9 shrink-0 text-gold" strokeWidth={1.4} />
             <div>
-              <p className="font-medium">Certificado de aleatoriedade</p>
-              <p className="text-sm text-muted-foreground">Emitido por laboratório de testes independente</p>
+              <p className="font-medium">Integração com RNG certificado</p>
+              <p className="text-sm text-muted-foreground">Embaralhamento imprevisível em todas as mesas</p>
             </div>
           </div>
         </div>
