@@ -108,7 +108,7 @@ export function Contact() {
 
       <div className="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
         <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 hover:text-foreground">
-          <Mail className="size-4 text-gold" strokeWidth={1.5} /> {contactInfo.email}
+          <Mail className="size-4 text-gold" strokeWidth={2.25} /> {contactInfo.email}
         </a>
         <span className="flex items-center gap-2">
           <span aria-hidden className="relative flex size-4 items-center justify-center">
