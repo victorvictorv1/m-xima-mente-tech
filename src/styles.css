@@ -230,3 +230,11 @@
   border: 1px solid oklch(0.8 0.01 80);
   box-shadow: 0 12px 24px -10px oklch(0 0 0 / 70%), inset 0 1px 0 oklch(1 0 0 / 70%);
 }
+
+/* Clean, professional figures and short labels (stats, specs) */
+@utility font-figure {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+}

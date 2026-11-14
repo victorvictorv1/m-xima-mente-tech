@@ -63,7 +63,7 @@ export function Technology() {
         <dl className="mt-16 grid border-t border-l border-border sm:grid-cols-2 lg:grid-cols-3">
           {specs.map(([t, d]) => (
             <div key={t} className="border-r border-b border-border p-7 transition-colors hover:bg-surface/60">
-              <dt className="font-serif-display text-3xl">{t}</dt>
+              <dt className="font-figure text-2xl">{t}</dt>
               <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</dd>
             </div>
           ))}
