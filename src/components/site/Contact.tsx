@@ -112,8 +112,7 @@ export function Contact() {
         </a>
         <span className="flex items-center gap-2">
           <span aria-hidden className="relative flex size-4 items-center justify-center">
-            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-gold/40" />
-            <span className="relative inline-flex size-2 rounded-full bg-gold ring-2 ring-gold/20" />
+            <span className="relative inline-flex size-2 rounded-full bg-gold" />
           </span>
           {contactInfo.location}
         </span>
