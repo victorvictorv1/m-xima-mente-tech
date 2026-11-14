@@ -1,6 +1,6 @@
 /*
- * Tailwind v4 entry. Keep every @import in this top block. Web fonts are loaded via <link> in
- * src/routes/__root.tsx and named in the --font-* tokens below.
+ * Tailwind v4 entry. Keep every @import in this top block. Web fonts load via <link> in
+ * src/routes/__root.tsx and are named in the --font-* tokens below.
  */
 @import "tailwindcss" source(none);
 @source "../src";
@@ -9,9 +9,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -40,10 +40,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --color-glow-cyan: var(--glow-cyan);
-  --color-glow-violet: var(--glow-violet);
-  --color-glow-blue: var(--glow-blue);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-violet: var(--violet);
+  --color-gold: var(--gold);
+  --color-mint: var(--mint);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -58,67 +59,62 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --animate-float: float 7s ease-in-out infinite;
-  --animate-fade-up: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-shine: shine 6s linear infinite;
+  --animate-fade-up: fade-up 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 3s ease-in-out infinite;
 }
 
-/* Dark-first brand palette: deep ink + cyan → violet energy */
+/* Graphite + plum base, lavender/violet tech glow, champagne gold for premium details */
 :root {
-  --radius: 0.875rem;
-  --background: oklch(0.155 0.012 255);
-  --foreground: oklch(0.94 0.008 250);
-  --surface: oklch(0.2 0.016 260);
-  --card: oklch(0.205 0.016 260);
-  --card-foreground: oklch(0.94 0.008 250);
-  --popover: oklch(0.2 0.016 260);
-  --popover-foreground: oklch(0.94 0.008 250);
-  --primary: oklch(0.82 0.15 212);
-  --primary-foreground: oklch(0.16 0.03 265);
-  --secondary: oklch(0.25 0.02 262);
-  --secondary-foreground: oklch(0.94 0.008 250);
-  --muted: oklch(0.23 0.016 260);
-  --muted-foreground: oklch(0.7 0.02 255);
-  --accent: oklch(0.6 0.24 292);
-  --accent-foreground: oklch(0.98 0.005 250);
-  --destructive: oklch(0.65 0.22 22);
-  --destructive-foreground: oklch(0.98 0.005 250);
-  --border: oklch(1 0 0 / 9%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.82 0.15 212);
+  --radius: 1rem;
+  --background: oklch(0.145 0.008 300);
+  --foreground: oklch(0.955 0.006 300);
+  --surface: oklch(0.185 0.011 300);
+  --surface-2: oklch(0.225 0.014 300);
+  --card: oklch(0.185 0.011 300);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.2 0.012 300);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.8 0.1 305);
+  --primary-foreground: oklch(0.2 0.03 300);
+  --secondary: oklch(0.23 0.014 300);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.22 0.012 300);
+  --muted-foreground: oklch(0.7 0.014 300);
+  --accent: oklch(0.6 0.22 298);
+  --accent-foreground: oklch(0.98 0.004 300);
+  --destructive: oklch(0.65 0.2 20);
+  --destructive-foreground: oklch(0.98 0.004 300);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.8 0.1 305);
 
-  --glow-cyan: oklch(0.84 0.15 210);
-  --glow-blue: oklch(0.66 0.19 255);
-  --glow-violet: oklch(0.6 0.25 292);
+  --violet: oklch(0.62 0.22 298);
+  --gold: oklch(0.84 0.09 85);
+  --mint: oklch(0.8 0.12 170);
 
-  --gradient-brand: linear-gradient(100deg, var(--glow-cyan) 0%, var(--glow-violet) 55%, var(--glow-cyan) 110%);
-  --gradient-text: linear-gradient(90deg, var(--glow-cyan), var(--glow-blue) 40%, var(--glow-violet) 70%, var(--glow-cyan));
-  --gradient-band: linear-gradient(120deg, oklch(0.22 0.07 300) 0%, oklch(0.22 0.06 262) 50%, oklch(0.24 0.05 220) 100%);
-  --gradient-hero-fade: linear-gradient(180deg, oklch(0.155 0.012 255 / 0.35) 0%, oklch(0.18 0.08 275 / 0.55) 55%, var(--background) 100%);
-  --shadow-glow: 0 10px 40px -10px color-mix(in oklab, var(--glow-cyan) 55%, transparent), 0 6px 30px -12px color-mix(in oklab, var(--glow-violet) 60%, transparent);
-  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 6%) inset, 0 20px 50px -30px oklch(0 0 0 / 80%);
+  --gradient-lavender: linear-gradient(135deg, oklch(0.86 0.08 310) 0%, oklch(0.72 0.16 300) 55%, oklch(0.6 0.22 292) 100%);
+  --gradient-text: linear-gradient(100deg, oklch(0.92 0.05 310), oklch(0.75 0.15 300) 50%, oklch(0.86 0.08 85));
+  --gradient-bento: linear-gradient(180deg, oklch(0.215 0.014 300) 0%, oklch(0.17 0.01 300) 100%);
+  --gradient-bento-glow: radial-gradient(120% 80% at 30% 0%, oklch(0.42 0.12 300 / 0.55) 0%, transparent 60%);
+  --gradient-stage: radial-gradient(60% 50% at 70% 30%, oklch(0.4 0.14 300 / 0.35), transparent 70%), radial-gradient(40% 40% at 10% 80%, oklch(0.5 0.08 85 / 0.12), transparent 70%);
+  --shadow-bento: inset 0 1px 0 0 oklch(1 0 0 / 7%), 0 30px 60px -35px oklch(0 0 0 / 90%);
+  --shadow-lavender: 0 0 0 1px oklch(1 0 0 / 25%) inset, 0 8px 30px -6px oklch(0.7 0.16 300 / 55%);
 
-  --chart-1: var(--glow-cyan);
-  --chart-2: var(--glow-violet);
-  --chart-3: var(--glow-blue);
-  --chart-4: oklch(0.8 0.16 75);
-  --chart-5: oklch(0.7 0.2 15);
-  --sidebar: var(--card);
+  --chart-1: var(--primary);
+  --chart-2: var(--violet);
+  --chart-3: var(--gold);
+  --chart-4: var(--mint);
+  --chart-5: oklch(0.7 0.18 20);
+  --sidebar: var(--surface);
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--secondary);
+  --sidebar-accent: var(--surface-2);
   --sidebar-accent-foreground: var(--foreground);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
-
-  /* category tints for the technology cards */
-  --tint-frontend: oklch(0.7 0.16 235);
-  --tint-backend: oklch(0.72 0.17 155);
-  --tint-infra: oklch(0.65 0.22 300);
-  --tint-realtime: oklch(0.78 0.17 65);
-  --tint-security: oklch(0.65 0.22 15);
-  --tint-ux: oklch(0.65 0.18 270);
 }
 
 @layer base {
@@ -136,67 +132,81 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-display);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
+    font-weight: 400;
   }
   ::selection {
-    background: color-mix(in oklab, var(--glow-violet) 45%, transparent);
+    background: color-mix(in oklab, var(--violet) 45%, transparent);
   }
+}
+
+@utility font-serif-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 @utility text-gradient {
   background-image: var(--gradient-text);
-  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-@utility bg-gradient-brand {
-  background-image: var(--gradient-brand);
-  background-size: 200% auto;
+@utility bg-lavender {
+  background-image: var(--gradient-lavender);
 }
 
-@utility bg-gradient-band {
-  background-image: var(--gradient-band);
+@utility bg-stage {
+  background-image: var(--gradient-stage);
 }
 
-@utility bg-hero-fade {
-  background-image: var(--gradient-hero-fade);
+/* The signature soft-lit card from the bento grid */
+@utility bento {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  border: 1px solid oklch(1 0 0 / 7%);
+  background: var(--gradient-bento);
+  box-shadow: var(--shadow-bento);
 }
 
-@utility shadow-glow {
-  box-shadow: var(--shadow-glow);
+@utility bento-glow {
+  background: var(--gradient-bento-glow), var(--gradient-bento);
 }
 
-@utility shadow-card {
-  box-shadow: var(--shadow-card);
+@utility shadow-lavender {
+  box-shadow: var(--shadow-lavender);
 }
 
 @utility glass {
-  background: color-mix(in oklab, var(--foreground) 7%, transparent);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid color-mix(in oklab, var(--foreground) 14%, transparent);
+  background: oklch(0.2 0.012 300 / 0.6);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 9%);
 }
 
-@utility grid-lines {
-  background-image:
-    linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);
-  background-size: 56px 56px;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+@utility dot-grid {
+  background-image: radial-gradient(oklch(1 0 0 / 7%) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(18px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes shine {
-  to { background-position: 200% center; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-1.5deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }
