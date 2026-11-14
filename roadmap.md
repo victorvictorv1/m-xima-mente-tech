@@ -9,3 +9,5 @@
 - [ ] New contact section layout (not like reference)
 - [ ] New, more eye-catching logo symbol; calmer main color
 - [ ] Wordmark: "Tech" smaller below "MáximaMente", new font
+- [ ] Remove the word "estúdio" everywhere
+- [ ] Add more technology content (dedicated tech section)
