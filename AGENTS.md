@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Single-page marketing site: each section is its own component in `src/components/site/`, composed in `src/routes/index.tsx` — keeps sections easy to reorder/edit.
+- Contact form opens the visitor's email app (mailto) using `src/components/site/contact-info.ts` — no backend is connected yet.
