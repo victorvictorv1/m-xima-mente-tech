@@ -7,8 +7,8 @@ const faqs = [
     a: "Sim. Desenvolvemos tanto clássicos conhecidos quanto jogos totalmente originais, com regras e baralho próprios. Toda a lógica roda no servidor, do jeito que você imaginou.",
   },
   {
-    q: "O que significa ter RNG certificado?",
-    a: "Significa que o sistema que embaralha as cartas foi testado por um laboratório independente e comprovado como verdadeiramente aleatório. Ninguém — nem nós — consegue prever ou influenciar a ordem das cartas.",
+    q: "O que é um RNG certificado?",
+    a: "É um gerador de números aleatórios com certificação, que garante uma ordem de cartas imprevisível. Integramos esse tipo de gerador ao servidor de partidas, então ninguém — nem nós — consegue prever ou influenciar as cartas.",
   },
   {
     q: "Quanto tempo leva para o jogo ficar pronto?",

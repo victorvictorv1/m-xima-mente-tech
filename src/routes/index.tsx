@@ -12,7 +12,7 @@ import { Footer } from "@/components/site/Footer";
 
 const title = "MáximaMente Tech — Tecnologia para jogos de cartas online";
 const description =
-  "Jogos de cartas online com multiplayer em tempo real, RNG certificado e servidores escaláveis para iOS, Android e Web.";
+  "Jogos de cartas online com multiplayer em tempo real, embaralhamento seguro e servidores escaláveis para iOS, Android e Web.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

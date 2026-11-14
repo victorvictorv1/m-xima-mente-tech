@@ -19,7 +19,7 @@ export function Process() {
           {steps.map((s, i) => (
             <li key={s.title} className="bento group flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-serif-display text-5xl text-gold/80 transition-colors group-hover:text-primary">0{i + 1}</span>
+                <span className="font-figure text-4xl text-gold/80 transition-colors group-hover:text-primary">0{i + 1}</span>
                 <span className="rounded-full border border-border px-3 py-1 font-mono text-[10px] tracking-widest text-muted-foreground uppercase">{s.tag}</span>
               </div>
               <h3 className="mt-10 text-xl">{s.title}</h3>
@@ -35,7 +35,7 @@ export function Process() {
             ["24/7", "monitoramento depois do lançamento"],
           ].map(([v, l]) => (
             <div key={l}>
-              <dt className="font-serif-display text-6xl text-foreground">{v}</dt>
+              <dt className="font-figure text-5xl text-foreground">{v}</dt>
               <dd className="mt-2 text-sm text-muted-foreground">{l}</dd>
             </div>
           ))}

@@ -18,7 +18,7 @@ export function Hero() {
             A tecnologia que leva seu jogo de cartas <span className="font-serif-display italic text-gradient">ao máximo.</span>
           </h1>
           <p className="mt-7 max-w-lg animate-fade-up text-lg leading-relaxed text-muted-foreground [animation-delay:240ms]">
-            Multiplayer em tempo real, RNG certificado e servidores que crescem junto com o seu público — do primeiro
+            Multiplayer em tempo real, embaralhamento seguro e servidores que crescem junto com o seu público — do primeiro
             protótipo à operação diária.
           </p>
           <div className="mt-10 flex animate-fade-up flex-wrap items-center gap-3 [animation-delay:360ms]">
@@ -49,11 +49,11 @@ export function Hero() {
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <ShieldCheck className="size-3.5 text-mint" /> Embaralhamento
             </div>
-            <p className="mt-1 text-sm font-medium">RNG certificado</p>
+            <p className="mt-1 text-sm font-medium">Aleatório e auditável</p>
           </div>
           <div className="glass absolute -right-3 top-10 animate-float rounded-2xl px-4 py-3 [animation-delay:2s] sm:-right-8">
             <p className="font-mono text-[11px] tracking-widest text-muted-foreground uppercase">latência</p>
-            <p className="font-serif-display text-3xl text-gold">32ms</p>
+            <p className="font-figure text-2xl text-gold">32ms</p>
           </div>
         </div>
       </div>
