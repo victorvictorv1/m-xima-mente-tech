@@ -1,6 +1,6 @@
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroCards from "@/assets/hero-cards.jpg";
+import heroCards from "@/assets/hero-cards-premium.jpg";
 
 export function Hero() {
   return (
