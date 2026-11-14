@@ -27,7 +27,7 @@ const faqs = [
 export function Faq() {
   return (
     <section id="duvidas" className="py-28">
-      <div className="mx-auto grid max-w-6xl gap-14 px-5 lg:grid-cols-[0.8fr_1.2fr]">
+      <div data-reveal className="mx-auto grid max-w-6xl gap-14 px-5 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-gold">Dúvidas</p>
           <h2 className="mt-4 text-4xl leading-tight font-light md:text-5xl">
