@@ -15,7 +15,7 @@ export function Rng() {
         <div>
           <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase">Aleatoriedade</p>
           <h2 className="mt-4 text-4xl leading-tight font-light md:text-5xl">
-            Sorte de verdade, <span className="font-serif-display italic text-gradient">comprovada.</span>
+            Sorte de verdade, <span className="font-serif-display italic text-gradient">em cada rodada.</span>
           </h2>
           <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
             O RNG (gerador de números aleatórios) decide a ordem de cada carta. Integramos ao servidor de partidas um
