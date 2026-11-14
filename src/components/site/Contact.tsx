@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, AtSign, Compass } from "lucide-react";
+import { ArrowUpRight, AtSign, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -111,7 +111,7 @@ export function Contact() {
           <AtSign className="size-4 text-gold" /> {contactInfo.email}
         </a>
         <span className="flex items-center gap-2">
-          <Compass className="size-4 text-gold" /> {contactInfo.location}
+          <Globe2 className="size-4 text-gold" /> {contactInfo.location}
         </span>
       </div>
     </section>
