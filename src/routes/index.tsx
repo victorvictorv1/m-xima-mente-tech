@@ -9,6 +9,7 @@ import { Process } from "@/components/site/Process";
 import { Faq } from "@/components/site/Faq";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { useScrollReveal } from "@/components/site/motion";
 
 const title = "MáximaMente Tech — Tecnologia para jogos de cartas online";
 const description =
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useScrollReveal();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

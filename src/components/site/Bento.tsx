@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
+import type React from "react";
 import { ArrowUpRight, Fingerprint } from "lucide-react";
+import { trackSpotlight } from "./motion";
 import { Button } from "@/components/ui/button";
 
 function TileText({ title, text, cta }: { title: string; text: string; cta?: boolean }) {
@@ -20,11 +23,16 @@ function TileText({ title, text, cta }: { title: string; text: string; cta?: boo
 /* Mini mesa de jogo ao vivo */
 function LiveTable() {
   const seats = [
-    { pos: "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2", name: "Ana", active: true },
+    { pos: "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2", name: "Ana" },
     { pos: "right-0 top-1/2 translate-x-1/2 -translate-y-1/2", name: "Rafa" },
     { pos: "left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2", name: "Você" },
     { pos: "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2", name: "Leo" },
   ];
+  const [turn, setTurn] = useState(0);
+  useEffect(() => {
+    const id = window.setInterval(() => setTurn((t) => (t + 1) % 4), 1800);
+    return () => window.clearInterval(id);
+  }, []);
   return (
     <div className="relative mx-auto h-44 w-72 rounded-[999px] border border-primary/25 bg-surface-2 shadow-[inset_0_0_40px_oklch(0.6_0.22_298/0.25)]">
       <div className="absolute inset-3 rounded-[999px] border border-dashed border-border" />
@@ -39,11 +47,11 @@ function LiveTable() {
           </span>
         ))}
       </div>
-      {seats.map((s) => (
+      {seats.map((s, idx) => (
         <div key={s.name} className={`absolute ${s.pos} flex flex-col items-center gap-1`}>
           <span
-            className={`grid size-10 place-items-center rounded-full border text-xs font-medium ${
-              s.active ? "border-primary bg-lavender text-primary-foreground shadow-lavender" : "border-border bg-surface text-muted-foreground"
+            className={`grid size-10 place-items-center rounded-full border text-xs font-medium transition-all duration-500 ${
+              idx === turn ? "border-primary bg-lavender text-primary-foreground shadow-lavender" : "border-border bg-surface text-muted-foreground"
             }`}
           >
             {s.name.slice(0, 2)}
@@ -92,7 +100,9 @@ function CodeWindow() {
       <p className="pl-4"><span className="text-primary">validar</span>(mesa, carta)</p>
       <p className="pl-4"><span className="text-primary">sincronizar</span>(mesa.<span className="text-mint">jogadores</span>)</p>
       <p className="pl-4"><span className="text-primary">pontuar</span>(mesa.<span className="text-mint">rodada</span>)</p>
-      <p>{"}"})</p>
+      <p>
+        {"}"})<span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-blink bg-primary/80" />
+      </p>
     </div>
   );
 }
@@ -147,7 +157,7 @@ export function Bento() {
   return (
     <section id="solucoes" className="py-28">
       <div className="mx-auto max-w-6xl px-5">
-        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div data-reveal className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <h2 className="max-w-xl text-4xl leading-tight font-light text-balance md:text-6xl">
             Tudo o que um jogo de cartas <span className="font-serif-display italic text-gradient">precisa</span>
           </h2>
@@ -158,7 +168,7 @@ export function Bento() {
 
         <div className="grid auto-rows-[minmax(0,auto)] gap-4 md:grid-cols-3">
           {/* Multiplayer */}
-          <article className="bento bento-glow flex flex-col justify-between gap-10 p-8 md:col-span-2 md:flex-row md:items-center">
+          <article data-reveal onPointerMove={trackSpotlight} style={{ "--d": "0ms" } as React.CSSProperties} className="bento spotlight bento-glow flex flex-col justify-between gap-10 p-8 md:col-span-2 md:flex-row md:items-center">
             <TileText
               title="Multiplayer em tempo real"
               text="Mesas que sincronizam cada carta em milissegundos, com reconexão automática e salas privadas para jogar com os amigos."
@@ -170,7 +180,7 @@ export function Bento() {
           </article>
 
           {/* Apps */}
-          <article className="bento flex flex-col justify-between gap-8 p-8">
+          <article data-reveal onPointerMove={trackSpotlight} style={{ "--d": "100ms" } as React.CSSProperties} className="bento spotlight flex flex-col justify-between gap-8 p-8">
             <div className="relative mx-auto h-32 w-full max-w-[220px]">
               <div className="absolute inset-x-6 top-0 h-28 rounded-2xl border border-border bg-surface-2 p-3 shadow-xl">
                 <div className="h-2 w-16 rounded-full bg-muted" />
@@ -185,7 +195,7 @@ export function Bento() {
           </article>
 
           {/* Anti-fraude */}
-          <article className="bento flex flex-col gap-8 p-8 md:row-span-2">
+          <article data-reveal onPointerMove={trackSpotlight} style={{ "--d": "200ms" } as React.CSSProperties} className="bento spotlight flex flex-col gap-8 p-8 md:row-span-2">
             <TileText
               title="Jogo limpo, sempre"
               text="Validação de cada jogada no servidor, detecção de conluio e auditoria de partidas suspeitas, com moderação automática."
@@ -196,7 +206,7 @@ export function Bento() {
           </article>
 
           {/* Emblema */}
-          <article className="bento bento-glow grid min-h-56 place-items-center p-8">
+          <article data-reveal onPointerMove={trackSpotlight} style={{ "--d": "0ms" } as React.CSSProperties} className="bento spotlight bento-glow grid min-h-56 place-items-center p-8">
             <div className="dot-grid absolute inset-0 opacity-50" />
             <div className="relative flex items-end gap-2">
               <span className="playing-card grid h-28 w-20 -rotate-12 place-items-center rounded-xl font-serif-display text-5xl text-card-ink">♠</span>
@@ -205,7 +215,7 @@ export function Bento() {
           </article>
 
           {/* Back-end */}
-          <article className="bento flex flex-col gap-8 p-8 md:row-span-2">
+          <article data-reveal onPointerMove={trackSpotlight} style={{ "--d": "100ms" } as React.CSSProperties} className="bento spotlight flex flex-col gap-8 p-8 md:row-span-2">
             <div className="-mr-12">
               <CodeWindow />
             </div>
@@ -216,13 +226,13 @@ export function Bento() {
           </article>
 
           {/* Torneios */}
-          <article className="bento flex flex-col gap-6 p-8">
+          <article data-reveal onPointerMove={trackSpotlight} style={{ "--d": "200ms" } as React.CSSProperties} className="bento spotlight flex flex-col gap-6 p-8">
             <TileText title="Torneios e ranking" text="Temporadas, ligas e conquistas que trazem o jogador de volta todo dia." />
             <Leaderboard />
           </article>
 
           {/* Live Ops */}
-          <article className="bento flex flex-col items-center gap-6 p-8 pb-0 text-center md:col-span-3 md:flex-row md:items-end md:justify-between md:pb-0 md:text-left">
+          <article data-reveal onPointerMove={trackSpotlight} style={{ "--d": "0ms" } as React.CSSProperties} className="bento spotlight flex flex-col items-center gap-6 p-8 pb-0 text-center md:col-span-3 md:flex-row md:items-end md:justify-between md:pb-0 md:text-left">
             <div className="md:pb-8">
               <TileText
                 title="Operação contínua"
