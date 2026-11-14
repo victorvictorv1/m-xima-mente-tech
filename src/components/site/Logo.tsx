@@ -12,7 +12,7 @@ export function Logo() {
         className="h-9 w-auto transition-transform duration-500 group-hover:scale-105"
       />
       <span className="flex flex-col items-start leading-none">
-        <span className="font-brand text-[16px] font-normal tracking-[-0.05em] text-foreground">
+        <span className="font-brand text-[16px] font-medium tracking-[-0.05em] text-foreground">
           Máxima<span className="text-logo-tech">Mente</span>
         </span>
         <span className="mt-1.5 font-brand text-[7px] font-medium tracking-[0.25em] text-tech-cyan uppercase">
