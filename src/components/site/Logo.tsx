@@ -1,5 +1,5 @@
 /* Brand mark: two fanned cards, the front one carrying an "M" drawn as a circuit trace. */
-export function LogoMark({ className = "size-10" }: { className?: string }) {
+export function LogoMark({ className = "size-11" }: { className?: string }) {
   return (
     <svg viewBox="0 0 44 44" className={className} aria-hidden>
       <defs>
