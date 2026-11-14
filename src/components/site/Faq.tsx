@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    q: "Vocês fazem jogos com regras próprias?",
-    a: "Sim. Desenvolvemos tanto clássicos conhecidos quanto jogos totalmente originais, com regras e baralho próprios. Toda a lógica roda no servidor, do jeito que você imaginou.",
+    q: "Vocês desenvolvem jogos para celular e computador?",
+    a: "Sim. O mesmo jogo roda em celulares iOS e Android e também no computador, direto no navegador. Os jogadores podem jogar juntos na mesma mesa, não importa o aparelho de cada um.",
   },
   {
     q: "O que é um RNG certificado?",
