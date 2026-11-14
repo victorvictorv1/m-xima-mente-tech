@@ -17,7 +17,7 @@ export function Footer() {
           ))}
         </nav>
         <div className="md:text-right">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} MáximaMente Tech</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} MáximaMente Tech.</p>
           <p className="mt-1 text-xs text-muted-foreground">Todos os direitos reservados.</p>
         </div>
       </div>
