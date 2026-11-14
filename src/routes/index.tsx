@@ -2,15 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Marquee } from "@/components/site/Marquee";
+import { Technology } from "@/components/site/Technology";
+import { Rng } from "@/components/site/Rng";
 import { Bento } from "@/components/site/Bento";
 import { Process } from "@/components/site/Process";
 import { Faq } from "@/components/site/Faq";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 
-const title = "MáximaMente Tech — Estúdio de jogos de cartas online";
+const title = "MáximaMente Tech — Tecnologia para jogos de cartas online";
 const description =
-  "Criamos jogos de cartas online com multiplayer ao vivo, torneios, anti-fraude e operação contínua para iOS, Android e Web.";
+  "Jogos de cartas online com multiplayer em tempo real, RNG certificado e servidores escaláveis para iOS, Android e Web.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,6 +35,8 @@ function Index() {
       <main>
         <Hero />
         <Marquee />
+        <Technology />
+        <Rng />
         <Bento />
         <Process />
         <Faq />

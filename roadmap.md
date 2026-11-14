@@ -1,3 +1,13 @@
 # Roadmap
-- [ ] Redesign site so it no longer copies the reference: card-game focus, premium/sophisticated look with tech accents, bento grid
-- [ ] Use the user's uploaded inspiration image as visual reference
+- [x] Redesign site away from reference: card-game focus, premium look, bento grid
+- [x] Use uploaded inspiration image (soft dark bento cards)
+- [x] Remove game names (marquee, FAQ, placeholders)
+- [x] Realistic card colors (hero image + mini cards: ivory faces, red/black suits)
+- [x] Remove money/monetization words
+- [x] Use suit symbols sparingly
+- [x] Add certified RNG content
+- [x] New contact section layout (not like reference)
+- [x] New, more eye-catching logo symbol; calmer main color
+- [x] Wordmark: "Tech" smaller below "MáximaMente", new font
+- [x] Remove the word "estúdio" everywhere
+- [x] Add more technology content (dedicated tech section)

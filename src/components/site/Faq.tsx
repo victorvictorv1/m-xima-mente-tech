@@ -3,24 +3,24 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    q: "Vocês fazem qualquer jogo de cartas?",
-    a: "Sim. Já pensamos em truco, buraco, poker, cacheta e também em jogos totalmente originais, com regras e baralho próprios. Se tem cartas, a gente faz.",
+    q: "Vocês fazem jogos com regras próprias?",
+    a: "Sim. Desenvolvemos tanto clássicos conhecidos quanto jogos totalmente originais, com regras e baralho próprios. Toda a lógica roda no servidor, do jeito que você imaginou.",
   },
   {
-    q: "Quanto custa e quanto tempo leva?",
-    a: "Depende do tamanho do jogo. Depois de uma conversa inicial, enviamos uma proposta com prazo e valor fechados. Um protótipo jogável costuma ficar pronto em cerca de 4 semanas.",
+    q: "O que significa ter RNG certificado?",
+    a: "Significa que o sistema que embaralha as cartas foi testado por um laboratório independente e comprovado como verdadeiramente aleatório. Ninguém — nem nós — consegue prever ou influenciar a ordem das cartas.",
   },
   {
-    q: "O jogo fica sendo meu?",
+    q: "Quanto tempo leva para o jogo ficar pronto?",
+    a: "Depende do tamanho do projeto. Um protótipo jogável costuma ficar pronto em cerca de 4 semanas, e você acompanha entregas toda semana até o lançamento.",
+  },
+  {
+    q: "O código fica sendo meu?",
     a: "Sim. Todo o código, as artes e a marca do jogo pertencem a você. Entregamos tudo documentado.",
   },
   {
     q: "E depois que o jogo for lançado?",
-    a: "Podemos continuar cuidando de tudo — servidores, eventos, novidades e suporte — ou treinar a sua equipe para assumir aos poucos.",
-  },
-  {
-    q: "Como vocês evitam trapaça?",
-    a: "Toda jogada é conferida no servidor, o embaralhamento é auditável e monitoramos padrões suspeitos, como jogadores combinando jogadas.",
+    a: "Podemos continuar cuidando de tudo — servidores, segurança, eventos e novidades — ou treinar a sua equipe para assumir aos poucos.",
   },
 ];
 
@@ -31,7 +31,7 @@ export function Faq() {
         <div className="lg:sticky lg:top-32 lg:self-start">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-gold">Dúvidas</p>
           <h2 className="mt-4 text-4xl leading-tight font-light md:text-5xl">
-            Antes de <span className="font-serif-display italic text-gradient">embaralhar</span>
+            Perguntas <span className="font-serif-display italic text-gradient">frequentes</span>
           </h2>
           <p className="mt-5 max-w-sm text-muted-foreground">Ficou alguma pergunta de fora? Responde a gente que conversamos.</p>
           <Button asChild variant="pill" size="lg" className="mt-8 px-6">
