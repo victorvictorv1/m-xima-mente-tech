@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 
-const links = [
-  { href: "#estudio", label: "Estúdio" },
-  { href: "#processo", label: "Processo" },
-  { href: "#duvidas", label: "Dúvidas" },
-];
+import { navLinks as links } from "./nav-links";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +31,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-surface-2 hover:text-foreground"
+              className="rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:bg-surface-2 hover:text-foreground"
             >
               {l.label}
             </a>

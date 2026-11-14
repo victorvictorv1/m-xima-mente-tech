@@ -33,7 +33,7 @@ function LiveTable() {
           <span
             key={c}
             style={{ transform: `rotate(${(i - 1) * 9}deg)` }}
-            className="grid h-14 w-10 place-items-center rounded-md border border-gold/40 bg-background font-serif-display text-lg text-gold shadow-lg"
+            className={`playing-card grid h-14 w-10 place-items-center rounded-md font-serif-display text-lg ${c.includes("♥") || c.includes("♦") ? "text-card-red" : "text-card-ink"}`}
           >
             {c}
           </span>
@@ -145,14 +145,14 @@ function Arc() {
 
 export function Bento() {
   return (
-    <section id="estudio" className="py-28">
+    <section id="solucoes" className="py-28">
       <div className="mx-auto max-w-6xl px-5">
         <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <h2 className="max-w-xl text-4xl leading-tight font-light text-balance md:text-6xl">
             Tudo o que um jogo de cartas <span className="font-serif-display italic text-gradient">precisa</span>
           </h2>
           <p className="max-w-sm text-muted-foreground">
-            Um time só para desenho, tecnologia e operação. Você foca no jogo; a gente cuida do resto.
+            Design, engenharia e operação no mesmo time. Você foca nas regras e na diversão; a gente cuida da tecnologia.
           </p>
         </div>
 
@@ -188,7 +188,7 @@ export function Bento() {
           <article className="bento flex flex-col gap-8 p-8 md:row-span-2">
             <TileText
               title="Jogo limpo, sempre"
-              text="Embaralhamento certificado, validação de cada jogada no servidor e detecção de conluio. A confiança do jogador é o seu maior ativo."
+              text="Validação de cada jogada no servidor, detecção de conluio e auditoria de partidas suspeitas, com moderação automática."
             />
             <div className="mt-auto">
               <Rings />
@@ -199,8 +199,8 @@ export function Bento() {
           <article className="bento bento-glow grid min-h-56 place-items-center p-8">
             <div className="dot-grid absolute inset-0 opacity-50" />
             <div className="relative flex items-end gap-2">
-              <span className="grid h-28 w-20 -rotate-12 place-items-center rounded-xl bg-lavender font-serif-display text-5xl text-primary-foreground shadow-lavender">♠</span>
-              <span className="grid h-24 w-16 rotate-6 place-items-center rounded-xl border border-gold/40 bg-surface-2 font-serif-display text-4xl text-gold">♦</span>
+              <span className="playing-card grid h-28 w-20 -rotate-12 place-items-center rounded-xl font-serif-display text-5xl text-card-ink">♠</span>
+              <span className="playing-card grid h-24 w-16 rotate-6 place-items-center rounded-xl font-serif-display text-4xl text-card-red">♦</span>
             </div>
           </article>
 
@@ -217,7 +217,7 @@ export function Bento() {
 
           {/* Torneios */}
           <article className="bento flex flex-col gap-6 p-8">
-            <TileText title="Torneios e ranking" text="Temporadas, ligas e premiações que trazem o jogador de volta todo dia." />
+            <TileText title="Torneios e ranking" text="Temporadas, ligas e conquistas que trazem o jogador de volta todo dia." />
             <Leaderboard />
           </article>
 
@@ -225,8 +225,8 @@ export function Bento() {
           <article className="bento flex flex-col items-center gap-6 p-8 pb-0 text-center md:col-span-3 md:flex-row md:items-end md:justify-between md:pb-0 md:text-left">
             <div className="md:pb-8">
               <TileText
-                title="Operação contínua e monetização"
-                text="Eventos sazonais, loja de itens, passes e métricas de retenção. Depois do lançamento, seguimos juntos fazendo o jogo crescer."
+                title="Operação contínua"
+                text="Eventos sazonais, novidades frequentes e métricas de engajamento em tempo real. Depois do lançamento, seguimos juntos fazendo o jogo evoluir."
               />
             </div>
             <Arc />
