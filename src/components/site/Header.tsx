@@ -39,7 +39,7 @@ export function Header() {
         </nav>
         <div className="hidden md:block">
           <Button asChild variant="lavender" size="lg" className="px-6">
-            <a href="#contato">Começar projeto</a>
+            <a href="#contato">Contato</a>
           </Button>
         </div>
         <button
@@ -64,7 +64,7 @@ export function Header() {
           ))}
           <Button asChild variant="lavender" size="lg" className="mt-2 w-full">
             <a href="#contato" onClick={() => setOpen(false)}>
-              Começar projeto
+              Contato
             </a>
           </Button>
         </div>
