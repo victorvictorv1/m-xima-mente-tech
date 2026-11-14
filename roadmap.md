@@ -11,3 +11,5 @@
 - [x] Wordmark: "Tech" smaller below "MáximaMente", new font
 - [x] Remove the word "estúdio" everywhere
 - [x] Add more technology content (dedicated tech section)
+- [x] FAQ: question about phones and computers
+- [ ] Premium logo mixing mind + cards + technology with "MM" (head with ivory MM card; more tech colors and tech detail; TECH without side lines) — waiting on user pick
