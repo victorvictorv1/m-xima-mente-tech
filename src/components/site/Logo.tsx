@@ -15,7 +15,7 @@ export function Logo() {
         <span className="text-[19px] font-semibold tracking-[-0.01em] text-foreground">
           Máxima<span className="text-logo-tech">Mente</span>
         </span>
-        <span className="mt-1 pl-px font-mono text-[9.5px] font-semibold tracking-[0.32em] text-[color:var(--tech-cyan)] uppercase">
+        <span className="mt-1 pl-px font-mono text-[9.5px] font-semibold tracking-[0.32em] text-tech-cyan uppercase">
           Tech
         </span>
       </span>
