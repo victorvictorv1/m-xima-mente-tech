@@ -1,60 +1,53 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SectionHeading } from "./SectionHeading";
+import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    q: "Quanto tempo leva para desenvolver uma plataforma completa?",
-    a: "Depende da complexidade. Um protótipo funcional pode ser entregue em 3 a 4 semanas. Projetos simples ficam prontos em 1 a 2 meses, e projetos completos com multiplayer, ranking, torneios e monetização levam de 2 a 4 meses. Trabalhamos com entregas semanais, para você acompanhar e ajustar durante o caminho.",
+    q: "Vocês fazem qualquer jogo de cartas?",
+    a: "Sim. Já pensamos em truco, buraco, poker, cacheta e também em jogos totalmente originais, com regras e baralho próprios. Se tem cartas, a gente faz.",
   },
   {
-    q: "Como funciona o processo de desenvolvimento?",
-    a: "Seguimos 5 fases: (1) descoberta e planejamento técnico, (2) protótipo e validação da ideia principal, (3) desenvolvimento das funcionalidades centrais, (4) recursos avançados como multiplayer e monetização, (5) testes, acabamento e lançamento. Cada fase inclui demonstrações ao vivo.",
+    q: "Quanto custa e quanto tempo leva?",
+    a: "Depende do tamanho do jogo. Depois de uma conversa inicial, enviamos uma proposta com prazo e valor fechados. Um protótipo jogável costuma ficar pronto em cerca de 4 semanas.",
   },
   {
-    q: "Vocês oferecem suporte e manutenção pós-lançamento?",
-    a: "Sim. Oferecemos planos de Live Ops com hospedagem em nuvem, monitoramento 24/7, atualizações de segurança, correção de bugs, eventos sazonais, suporte aos usuários, análise de métricas e relatórios de performance. Você escolhe entre gestão completa ou transferência gradual para sua equipe.",
+    q: "O jogo fica sendo meu?",
+    a: "Sim. Todo o código, as artes e a marca do jogo pertencem a você. Entregamos tudo documentado.",
   },
   {
-    q: "Como vocês garantem a segurança contra trapaças?",
-    a: "Usamos proteção em várias camadas: validação de todas as jogadas no servidor, detecção de padrões suspeitos com machine learning, limites de requisições, auditoria de partidas, moderação automática e manual e criptografia ponta a ponta. Todo processamento crítico acontece no servidor, nunca no aparelho do usuário.",
+    q: "E depois que o jogo for lançado?",
+    a: "Podemos continuar cuidando de tudo — servidores, eventos, novidades e suporte — ou treinar a sua equipe para assumir aos poucos.",
+  },
+  {
+    q: "Como vocês evitam trapaça?",
+    a: "Toda jogada é conferida no servidor, o embaralhamento é auditável e monitoramos padrões suspeitos, como jogadores combinando jogadas.",
   },
 ];
 
 export function Faq() {
   return (
-    <section id="faq" className="py-28">
-      <div className="mx-auto max-w-3xl px-5">
-        <SectionHeading
-          eyebrow="Dúvidas"
-          title={
-            <>
-              Perguntas <span className="text-gradient">Frequentes</span>
-            </>
-          }
-          subtitle="Respostas para as dúvidas mais comuns sobre nossos serviços."
-        />
-        <Accordion type="single" collapsible className="space-y-3">
+    <section id="duvidas" className="py-28">
+      <div className="mx-auto grid max-w-6xl gap-14 px-5 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-gold">Dúvidas</p>
+          <h2 className="mt-4 text-4xl leading-tight font-light md:text-5xl">
+            Antes de <span className="font-serif-display italic text-gradient">embaralhar</span>
+          </h2>
+          <p className="mt-5 max-w-sm text-muted-foreground">Ficou alguma pergunta de fora? Responde a gente que conversamos.</p>
+          <Button asChild variant="pill" size="lg" className="mt-8 px-6">
+            <a href="#contato">Perguntar direto</a>
+          </Button>
+        </div>
+        <Accordion type="single" collapsible defaultValue="item-0" className="divide-y divide-border border-y border-border">
           {faqs.map((f, i) => (
-            <AccordionItem
-              key={f.q}
-              value={`item-${i}`}
-              className="rounded-2xl border border-border bg-card px-6 transition-colors data-[state=open]:border-primary/40"
-            >
-              <AccordionTrigger className="py-5 font-display text-base font-semibold hover:no-underline">
+            <AccordionItem key={f.q} value={`item-${i}`} className="border-0">
+              <AccordionTrigger className="py-6 text-left text-lg font-normal hover:no-underline [&[data-state=open]]:text-primary">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="pb-6 text-[15px] leading-relaxed text-muted-foreground">
-                {f.a}
-              </AccordionContent>
+              <AccordionContent className="pb-6 text-[15px] leading-relaxed text-muted-foreground">{f.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground">Não encontrou sua dúvida?</p>
-          <a href="#contato" className="mt-2 inline-block font-medium text-primary hover:underline">
-            Entre em contato conosco →
-          </a>
-        </div>
       </div>
     </section>
   );

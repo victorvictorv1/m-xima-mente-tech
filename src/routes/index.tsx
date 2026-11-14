@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
-import { Services } from "@/components/site/Services";
-import { Technologies } from "@/components/site/Technologies";
+import { Marquee } from "@/components/site/Marquee";
+import { Bento } from "@/components/site/Bento";
+import { Process } from "@/components/site/Process";
 import { Faq } from "@/components/site/Faq";
-import { Stats } from "@/components/site/Stats";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 
-const title = "MáximaMente Tech — Aplicações e plataformas de nível profissional";
+const title = "MáximaMente Tech — Estúdio de jogos de cartas online";
 const description =
-  "Desenvolvemos apps mobile e web, back-end escalável em tempo real, anti-cheat e Live Ops para plataformas de sucesso.";
+  "Criamos jogos de cartas online com multiplayer ao vivo, torneios, anti-fraude e operação contínua para iOS, Android e Web.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,10 +32,10 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <Services />
-        <Technologies />
+        <Marquee />
+        <Bento />
+        <Process />
         <Faq />
-        <Stats />
         <Contact />
       </main>
       <Footer />
