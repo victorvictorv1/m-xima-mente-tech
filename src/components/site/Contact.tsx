@@ -55,7 +55,7 @@ export function Contact() {
 
   return (
     <section id="contato" className="px-5 pb-28">
-      <div className="mx-auto max-w-4xl text-center">
+      <div data-reveal className="mx-auto max-w-4xl text-center">
         <h2 className="text-4xl leading-tight font-light text-balance md:text-6xl">
           Conte sobre o <span className="font-serif-display italic text-gradient">seu jogo</span>
         </h2>

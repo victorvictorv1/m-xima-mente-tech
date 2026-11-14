@@ -1,4 +1,8 @@
+import { useEffect, useState } from "react";
 import { BadgeCheck, Check } from "lucide-react";
+
+const hex = (n: number) =>
+  Array.from({ length: n }, () => Math.floor(Math.random() * 16).toString(16)).join("");
 
 const points = [
   "Gerador criptograficamente seguro, impossível de prever",
@@ -9,9 +13,14 @@ const points = [
 
 export function Rng() {
   const deck = Array.from({ length: 9 });
+  const [seed, setSeed] = useState("9f3a…c71e");
+  useEffect(() => {
+    const id = window.setInterval(() => setSeed(`${hex(4)}…${hex(4)}`), 1600);
+    return () => window.clearInterval(id);
+  }, []);
   return (
     <section id="rng" className="px-5 pb-28">
-      <div className="bento mx-auto grid max-w-6xl gap-12 p-8 md:p-14 lg:grid-cols-2 lg:items-center">
+      <div data-reveal className="bento mx-auto grid max-w-6xl gap-12 p-8 md:p-14 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase">Aleatoriedade</p>
           <h2 className="mt-4 text-4xl leading-tight font-light md:text-5xl">
@@ -35,7 +44,7 @@ export function Rng() {
 
         <div className="relative rounded-3xl border border-border bg-background/60 p-6 md:p-8">
           <p className="font-mono text-[11px] tracking-widest text-muted-foreground uppercase">semente</p>
-          <p className="mt-1 truncate font-mono text-sm text-primary">0x9f3a…c71e · 256 bits</p>
+          <p className="mt-1 truncate font-mono text-sm text-primary">0x{seed} · 256 bits</p>
           <div className="my-6 flex items-center gap-2 text-muted-foreground">
             <span className="h-px flex-1 bg-border" />
             <span className="font-mono text-[11px] tracking-widest uppercase">embaralhando</span>
@@ -45,8 +54,11 @@ export function Rng() {
             {deck.map((_, i) => (
               <span
                 key={i}
-                style={{ transform: `rotate(${(i - 4) * 5}deg) translateY(${Math.abs(i - 4) * 3}px)` }}
-                className="-mx-2.5 h-20 w-14 rounded-lg border border-ivory/40 bg-surface-2 shadow-lg [background-image:repeating-linear-gradient(45deg,oklch(1_0_0/5%)_0_2px,transparent_2px_7px)]"
+                style={{
+                  transform: `rotate(${(i - 4) * 5}deg) translateY(${Math.abs(i - 4) * 3}px)`,
+                  animationDelay: `${i * 0.12}s`,
+                }}
+                className="-mx-2.5 animate-deal-wave h-20 w-14 rounded-lg border border-ivory/40 bg-surface-2 shadow-lg [background-image:repeating-linear-gradient(45deg,oklch(1_0_0/5%)_0_2px,transparent_2px_7px)]"
               />
             ))}
           </div>

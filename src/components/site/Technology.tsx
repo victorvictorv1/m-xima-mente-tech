@@ -1,3 +1,4 @@
+import type React from "react";
 import { Smartphone, Radio, Cpu, Dice5, Database, Activity } from "lucide-react";
 
 const flow = [
@@ -21,7 +22,7 @@ export function Technology() {
     <section id="tecnologia" className="py-28">
       <div className="mx-auto max-w-6xl px-5">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
+          <div data-reveal>
             <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase">Tecnologia</p>
             <h2 className="mt-4 text-4xl leading-tight font-light text-balance md:text-6xl">
               Engenharia de verdade <span className="font-serif-display italic text-gradient">por trás de cada carta</span>
@@ -33,7 +34,7 @@ export function Technology() {
           </div>
 
           {/* Arquitetura */}
-          <div className="bento bento-glow p-6 md:p-8">
+          <div data-reveal style={{ "--d": "150ms" } as React.CSSProperties} className="bento bento-glow p-6 md:p-8">
             <div className="dot-grid absolute inset-0 opacity-40" />
             <ol className="relative space-y-3">
               {flow.map(({ icon: Icon, label, sub }, i) => (
@@ -53,14 +54,21 @@ export function Technology() {
                     )}
                     {i === 1 && <Activity className="size-4 animate-pulse-soft text-mint" />}
                   </div>
-                  {i < flow.length - 1 && <span className="mx-auto block h-3 w-px bg-primary/30" />}
+                  {i < flow.length - 1 && (
+                    <span className="relative mx-auto block h-4 w-px overflow-hidden bg-primary/25">
+                      <span
+                        className="absolute left-0 h-2 w-px animate-flow-down bg-gold"
+                        style={{ animationDelay: `${i * 0.5}s` }}
+                      />
+                    </span>
+                  )}
                 </li>
               ))}
             </ol>
           </div>
         </div>
 
-        <dl className="mt-16 grid border-t border-l border-border sm:grid-cols-2 lg:grid-cols-3">
+        <dl data-reveal className="mt-16 grid border-t border-l border-border sm:grid-cols-2 lg:grid-cols-3">
           {specs.map(([t, d]) => (
             <div key={t} className="border-r border-b border-border p-7 transition-colors hover:bg-surface/60">
               <dt className="font-figure text-2xl">{t}</dt>
