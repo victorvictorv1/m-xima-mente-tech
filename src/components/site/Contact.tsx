@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, AtSign, Globe2 } from "lucide-react";
+import { ArrowUpRight, AtSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -111,7 +111,11 @@ export function Contact() {
           <AtSign className="size-4 text-gold" /> {contactInfo.email}
         </a>
         <span className="flex items-center gap-2">
-          <Globe2 className="size-4 text-gold" /> {contactInfo.location}
+          <span aria-hidden className="relative flex size-4 items-center justify-center">
+            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-gold/40" />
+            <span className="relative inline-flex size-2 rounded-full bg-gold ring-2 ring-gold/20" />
+          </span>
+          {contactInfo.location}
         </span>
       </div>
     </section>
